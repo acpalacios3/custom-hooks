@@ -1,10 +1,9 @@
-import React from "react";
-import {useState} from React
-
 import { useState } from 'react';
 
+
+// Custom Hook
 function usePagination(
-  totalItems,
+  totalItems ,
   itemsPerPage = 10,
   initialPage = 1
 ) {
@@ -18,9 +17,22 @@ function usePagination(
 // Calculate the starting index
   const startIndex = (currentPage - 1) * itemsPerPage;
 
-  // Calculate the ending index
+  // Calculate the ending index. Math.min() limits the maximum page number
   const endIndex = Math.min( startIndex + itemsPerPage, totalItems);
+
+  // Calculate items on current page
+  const itemsOnCurrentPage = endIndex - startIndex;
+ 
+  return {
+    totalItems,
+    itemsPerPage,
+    currentPage,
+    totalPages,
+    startIndex,
+    endIndex,
+    itemsOnCurrentPage
+  };
 
 }  
 
-}
+export default usePagination
