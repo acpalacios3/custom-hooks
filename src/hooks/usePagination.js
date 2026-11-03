@@ -6,10 +6,12 @@ function usePagination(
   totalItems ,
   itemsPerPage = 10,
   initialPage = 1
+
 ) {
 
 //    current page
   const [currentPage, setCurrentPage] = useState(initialPage);
+  console.log('currentPage====>'+currentPage );
 
 // the total number of pages
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -22,6 +24,19 @@ function usePagination(
 
   // Calculate items on current page
   const itemsOnCurrentPage = endIndex - startIndex;
+
+  // page number that the user can navigate to. 
+  // Changes the current page with setCurrentPage  while keeping the page number
+  // within the valid range (1 to totalPages).
+  
+const setPage = (pageNumberNav) => {
+  const newPage = Math.max(1,
+    Math.min(pageNumberNav, totalPages)
+  );
+
+  setCurrentPage(newPage);
+};
+
  
   return {
     totalItems,
@@ -30,7 +45,8 @@ function usePagination(
     totalPages,
     startIndex,
     endIndex,
-    itemsOnCurrentPage
+    itemsOnCurrentPage,
+    setPage
   };
 
 }  
