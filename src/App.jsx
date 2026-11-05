@@ -6,7 +6,7 @@ function App() {
   return (
     <main>
       {/* <PaginationDemo /> */}
-      <DebounceSearchDemo/>
+      <DebounceSearchDemo />
 
     </main>
   );

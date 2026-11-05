@@ -4,8 +4,10 @@ import useDebounce from "../hooks/useDebounce";
 function DebounceSearchDemo() {
 
     const [text, setText] = useState("");
-   
-    const debouncedText = useDebounce(text, 500);
+
+    const [delay, setDelay] = useState(500);
+
+    const debouncedText = useDebounce(text, delay);
 
     // runs when debouncedText changes and simulates a search by showing the value in the console.
     useEffect(() => {
@@ -20,17 +22,32 @@ function DebounceSearchDemo() {
     return (
         <div>
             <h2>Debounce Search Demo</h2>
-            
-            <input
-                type="text"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                placeholder="Type to search ..."
-            />
 
-            <p>Current Input: {text}</p>
+            <label>
+                Debounce Delay (ms):
 
-            <p>Debounced Value (after 500ms): {debouncedText}</p>
+                <input
+                    type="number"
+                    min="0"
+                    step="100"
+                    value={delay}
+                    onChange={(e) => setDelay(Math.max(0, Number(e.target.value)))}
+                />
+            </label>
+
+            <div>
+
+                <input
+                    type="text"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    placeholder="Type to search ..."
+                />
+
+                <p>Current Input: {text}</p>
+
+                <p>Debounced Value (after {delay}ms): {debouncedText}</p>
+            </div>
             <h3>Simulated Search Results:</h3>
 
             <p>Type to see results.</p>
