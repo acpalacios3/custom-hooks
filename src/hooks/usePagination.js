@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-
 // Custom Hook
 function usePagination(
   totalItems,
@@ -53,8 +52,6 @@ function usePagination(
     canPrevPage,
     canNextPage
   });
-
-
 
   return {
     totalItems,

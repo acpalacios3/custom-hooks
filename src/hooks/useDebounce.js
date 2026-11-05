@@ -5,7 +5,6 @@ function useDebounce(value, delay = 500) {
 
     const [debouncedValue, setdebouncedValue] = useState("");
 
-
     //    value: the value we want to control (for example, what we type in an input). delay: waiting time.
     // setTimeout() schedules the action to wait 500 milliseconds and then sets the value
     useEffect(() => {

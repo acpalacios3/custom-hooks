@@ -52,42 +52,42 @@ function PaginacionDemo() {
     // const handleTestPage = () => {
     //     setPage(Number(pageNumber));
     //   };
-const pageButtons = [];
-for (let i = 1; i <= totalPages; i++) {
+    const pageButtons = [];
+    for (let i = 1; i <= totalPages; i++) {
 
-  pageButtons.push(
-    <button
-      key={i}
-      onClick={() => setPage(i)}
-      className={currentPage === i ? "active" : ""}
-    >
-      {i}
-    </button>
-  );
+        pageButtons.push(
+            <button
+                key={i}
+                onClick={() => setPage(i)}
+                className={currentPage === i ? "active" : ""}
+            >
+                {i}
+            </button>
+        );
 
-}
+    }
     return (
 
         <section className="container">
             <h2 className="title">Pagination Demo</h2>
             <div className="items-page">
-            {/* items per page selector */}
-            <label htmlFor="itemsPerPage">Items per page: </label>
+                {/* items per page selector */}
+                <label htmlFor="itemsPerPage">Items per page: </label>
 
-            <select
-            id="itemsPerPage"
-            className="items-page-select"
-            value={itemsPerPage}
-            onChange={(e) => setItemsPerPage(Number(e.target.value))}
-            >
-            <option value={5}>5</option>
-            <option value={10}>10</option>
-            <option value={15}>15</option>
-            <option value={20}>20</option>
-            </select>
+                <select
+                    id="itemsPerPage"
+                    className="items-page-select"
+                    value={itemsPerPage}
+                    onChange={(e) => setItemsPerPage(Number(e.target.value))}
+                >
+                    <option value={5}>5</option>
+                    <option value={10}>10</option>
+                    <option value={15}>15</option>
+                    <option value={20}>20</option>
+                </select>
 
-            <p className="total-items">Total Items: {totalItems}</p>
-        </div>
+                <p className="total-items">Total Items: {totalItems}</p>
+            </div>
 
 
             {/* <p>Current page: {currentPage}</p>
@@ -134,8 +134,8 @@ for (let i = 1; i <= totalPages; i++) {
             </div>
 
             <p className="showing-page">
-            Showing items {startIndex + 1} - {endIndex}  
-              (Total on this page: {itemsOnCurrentPage})
+                Showing items {startIndex + 1} - {endIndex}
+                (Total on this page: {itemsOnCurrentPage})
             </p>
 
             <div className="page-buttons">

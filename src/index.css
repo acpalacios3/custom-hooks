@@ -1,113 +1,55 @@
-
 .container {
-  max-width: 600px;
-  margin: 30px auto;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  font-size: 14px;
-  color: #374151;
+    width: 600px;
+    margin: 20px auto;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    color: #334155;
+    box-sizing: border-box;
 }
+
 .container h2 {
-  font-size: 14px;
-  font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 25px;
 }
 
-.title {
-  margin: 0 0 20px;
-  text-align: center;
-  font-size: 14px;
-  color: #374151;
+.label {
+    font-size: 14px;
 }
 
-.container button,
-.container select,
-.container label,
-.container p,
-.container li,
-.container span {
-  font-size: 14px;
-}
-
-.items-page-select {
-  border: none;
-  outline: none;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-
-.items-page {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.total-items {
-   margin: 0 0 0 auto;
-  text-align: right;
-}
-
-.items-list {
-  
-width: 100%;
-  padding: 16px 0 16px 15px;
-  margin: 20px 0;
-  list-style: none;
-}
-
-.items-list li {
-  padding: 5px 0;
-  text-align: left;
-}
-
-.pag-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin: 20px 0;
-  padding: 0;
-  gap: 0;
-  }
-
-.pag-navigation button {
-  margin: 0;
-  padding: 8px 14px;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  background: transparent;
-  color: #374151;
-  font-size: 14px;
-  cursor: pointer;
-  
-}
-
-.showing-page{
-text-align: center;
+.container input[type="number"] {
+    width: 55px;
+    padding: 5px;
+    border: none;
+    outline: none;
 
 }
 
- button,
-.page-buttons button {
-  padding: 4px 6px;
-  border: 1px solid #9ca3af;
-  border-radius: 5px;
-  cursor: pointer;
+.search-container {
+    width: 100%;
 }
 
-
-.page-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 16px;
+.search-input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-button.active {
-  background-color: #2563eb;
-  color: white;
-  border-color: #2563eb;
+.container p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.container h3 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 5px;
 }

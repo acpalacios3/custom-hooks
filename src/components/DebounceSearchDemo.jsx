@@ -20,7 +20,7 @@ function DebounceSearchDemo() {
     }, [debouncedText]);
 
     return (
-        <div>
+        <div className="container">
             <h2>Debounce Search Demo</h2>
 
             <label>
@@ -35,18 +35,19 @@ function DebounceSearchDemo() {
                 />
             </label>
 
-            <div>
+            <div className="search-container">
 
                 <input
+                    className="search-input"
                     type="text"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Type to search ..."
                 />
 
-                <p>Current Input: {text}</p>
+                <p><strong><em>Current Input:</em></strong> {text}</p>
 
-                <p>Debounced Value (after {delay}ms): {debouncedText}</p>
+                <p><strong><em>Debounced Value (after {delay}ms):</em></strong> {debouncedText}</p>
             </div>
             <h3>Simulated Search Results:</h3>
 
