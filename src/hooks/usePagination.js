@@ -4,10 +4,12 @@ import { useState } from 'react';
 // Custom Hook
 function usePagination(
   totalItems,
-  itemsPerPage = 10,
+  initialItemsPerPage = 10,
   initialPage = 1
 
 ) {
+
+  const [itemsPerPage, setItemsPerPage] = useState(initialItemsPerPage);
 
 
   //    current page
@@ -57,6 +59,7 @@ function usePagination(
   return {
     totalItems,
     itemsPerPage,
+    setItemsPerPage,
     currentPage,
     totalPages,
     startIndex,

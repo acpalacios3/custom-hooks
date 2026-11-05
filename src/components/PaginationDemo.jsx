@@ -33,6 +33,7 @@ function PaginacionDemo() {
     const {
         totalItems,
         itemsPerPage,
+        setItemsPerPage,
         currentPage,
         totalPages,
         startIndex,
@@ -51,18 +52,49 @@ function PaginacionDemo() {
     // const handleTestPage = () => {
     //     setPage(Number(pageNumber));
     //   };
+const pageButtons = [];
+for (let i = 1; i <= totalPages; i++) {
 
+  pageButtons.push(
+    <button
+      key={i}
+      onClick={() => setPage(i)}
+      className={currentPage === i ? "active" : ""}
+    >
+      {i}
+    </button>
+  );
+
+}
     return (
 
-        <section>
-            <h2>Pagination Demo</h2>
-            <p>Items per page: {itemsPerPage}</p>
-            <p>Total Items: {totalItems}</p>
-            <p>Current page: {currentPage}</p>
+        <section className="container">
+            <h2 className="title">Pagination Demo</h2>
+            <div className="items-page">
+            {/* items per page selector */}
+            <label htmlFor="itemsPerPage">Items per page: </label>
+
+            <select
+            id="itemsPerPage"
+            className="items-page-select"
+            value={itemsPerPage}
+            onChange={(e) => setItemsPerPage(Number(e.target.value))}
+            >
+            <option value={5}>5</option>
+            <option value={10}>10</option>
+            <option value={15}>15</option>
+            <option value={20}>20</option>
+            </select>
+
+            <p className="total-items">Total Items: {totalItems}</p>
+        </div>
+
+
+            {/* <p>Current page: {currentPage}</p>
             <p>Total pages: {totalPages}</p>
             <p>Start index: {startIndex}</p>
             <p>End index: {endIndex}</p>
-            <p>Items on current page: {itemsOnCurrentPage}</p>
+            <p>Items on current page: {itemsOnCurrentPage}</p> */}
 
 
             {/* <button onClick={handleTestPage}>
@@ -74,7 +106,7 @@ function PaginacionDemo() {
                 onChange={(e) => setPageNumber(e.target.value)}
             /> */}
 
-            <ul>
+            <ul className="items-list">
                 {currentItems.map((item, index) => (
                     <li key={item}>
                         {index + 1}. {item}
@@ -82,13 +114,17 @@ function PaginacionDemo() {
                 ))}
             </ul>
 
-            <div>
+            <div className="pag-navigation">
 
                 <button onClick={() => setPage(currentPage - 1)}
                     disabled={!canPrevPage}
                 >
                     Previous
                 </button>
+
+                <span>
+                    Page {currentPage} of {totalPages}
+                </span>
 
                 <button onClick={() => setPage(currentPage + 1)}
                     disabled={!canNextPage}
@@ -97,19 +133,14 @@ function PaginacionDemo() {
                 </button>
             </div>
 
-            <button onClick={() => setPage(1)}>1</button>
-            <button onClick={() => setPage(2)}>2</button>
-            <button onClick={() => setPage(3)}>3</button>
-            <button onClick={() => setPage(4)}>4</button>
-            <button onClick={() => setPage(5)}>5</button>
-            <button onClick={() => setPage(6)}>6</button>
-            <button onClick={() => setPage(7)}>7</button>
-            <button onClick={() => setPage(8)}>8</button>
-            <button onClick={() => setPage(9)}>9</button>
-            <button onClick={() => setPage(10)}>10</button>
-            <button onClick={() => setPage(11)}>11</button>
-            <button onClick={() => setPage(12)}>12</button>
-            <button onClick={() => setPage(13)}>13</button>
+            <p className="showing-page">
+            Showing items {startIndex + 1} - {endIndex}  
+              (Total on this page: {itemsOnCurrentPage})
+            </p>
+
+            <div className="page-buttons">
+                {pageButtons}
+            </div>
 
         </section>
     );
