@@ -20,7 +20,7 @@ function DebounceSearchDemo() {
     }, [debouncedText]);
 
     return (
-        <div className="container">
+        <div className="debounce-container">
             <h2>Debounce Search Demo</h2>
 
             <label>
@@ -35,10 +35,10 @@ function DebounceSearchDemo() {
                 />
             </label>
 
-            <div className="search-container">
+            <div className="debounce-search-container">
 
                 <input
-                    className="search-input"
+                    className="debounce-search-input"
                     type="text"
                     value={text}
                     onChange={(e) => setText(e.target.value)}

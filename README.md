@@ -1,20 +1,69 @@
-# React + Vite
+## React Custom Hooks: Pagination and Debounce## 
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+"developing two common custom Hooks: usePagination for managing client-side pagination logic, and useDebounce for debouncing rapidly changing values, often used with search inputs."
 
-Currently, two official plugins are available:
+This project demonstrates how to create and implement reusable Custom Hooks in React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Installation and Setup##
 
-## React Compiler
+1. Install the project dependencies:
+npm install
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+2. Start the development server:
+npm run dev
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+3. Open the local URL provided by Vite in your browser.
 
-## Expanding the Oxlint configuration
+**Learning Objectives**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-# custom-hooks
+Understand how to create and use Custom Hooks in React.
+Implement reusable logic to manage pagination.
+Implement a debounce mechanism to delay value updates.
+Understand how useState and useEffect work together.
+Practice passing parameters to Custom Hooks.
+Understand cleanup functions and how clearTimeout() prevents unnecessary timer executions.
+
+**Technologies Used:**
+ React,JavaScript, JSX, CSS, Vite
+
+## Project :##
+
+1. Pagination Custom Hook (usePagination)
+
+The usePagination hook manages pagination logic and allows users to navigate through a collection of items.
+
+**Features:**
+
+Navigate between pages.
+Set the number of items displayed per page.
+Calculate the total number of pages.
+Display a specific portion of an array using slice().
+Navigate to the previous and next pages.
+Display the current page and total number of items.
+React Hooks Used:
+useState: Manages the current page and pagination state.
+
+Component: PaginationDemo
+
+Demonstrates how to use the usePagination hook to display a list of items divided into pages.
+
+2. Debounce Custom Hook (useDebounce)
+The useDebounce hook delays updating a value until a specified amount of time has passed without additional changes.
+
+Features:
+Capture the user's input in real time.
+Delay the value update using a configurable time interval.
+Display both the current input and the debounced value.
+Allow users to adjust the debounce delay in milliseconds.
+Simulate a search operation using console.log().
+Clear previous timers when the input changes.
+
+**React Hooks Used:**
+
+useState: Stores the current input and debounce delay.
+useEffect: Controls the timer and detects changes in dependencies.
+clearTimeout(): Cancels the previous timer through the cleanup function.
+
+Component: DebounceSearchDemo
+
+Demonstrates how to use the useDebounce hook with a controlled input field and a simulated search operation.
